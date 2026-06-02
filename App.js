@@ -1,241 +1,283 @@
-import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, SafeAreaView,StatusBar, ScrollView,
-} from 'react-native';
+import React from "react";
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 
-const App = () => {
+export default function Treinar() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-      
+    <View style={styles.container}>
+      {/* HEADER */}
+      <View style={styles.header}>
+        <Text style={styles.logo}>💬</Text>
+
+        <View style={styles.headerInfo}>
+          <Text style={styles.headerText}>🔥 0</Text>
+          <Text style={styles.headerText}>⭐ 174</Text>
+          <Text style={styles.headerText}>👤</Text>
+        </View>
+      </View>
+
       <ScrollView showsVerticalScrollIndicator={false}>
+        {/* TÍTULO */}
+        <View style={styles.section}>
+          <Text style={styles.title}>🖍️ Treinar</Text>
 
-        {/* Header com horário */}
-        <View style={styles.navbar}>
-          <View style={styles.logo}>
-            
-          </View>
-        </View>
-
-        {/* Seção Treinar Principal */}
-        <View style={styles.mainTrainingCard}>
-          <Text style={styles.mainTrainingTitle}>Treinar</Text>
-          <Text style={styles.mainTrainingSubtitle}>
-            Treine com questões ajustadas ao seu nível e descubra sua nota com o TRI.
+          <Text style={styles.subtitle}>
+            Treine com questões ajustadas ao seu nível e descubra sua nota com o
+            TRI.
           </Text>
+
+          <View style={styles.line} />
         </View>
 
-        {/* Menu de Navegação */}
-        <View style={styles.menuContainer}>
-          <TouchableOpacity style={styles.menuItem}>
-            <Text style={styles.menuText}>Áreas</Text>
+        {/* ABAS */}
+        <View style={styles.tabs}>
+          <TouchableOpacity style={styles.activeTab}>
+            <Text style={styles.activeTabText}>📚 Áreas</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem}>
-            <Text style={styles.menuText}>Competências</Text>
+
+          <TouchableOpacity style={styles.tab}>
+            <Text style={styles.tabText}>🎯 Competências</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem}>
-            <Text style={styles.menuText}>Habilidades</Text>
+
+          <TouchableOpacity style={styles.tab}>
+            <Text style={styles.tabText}>🛠️ Habilidades</Text>
           </TouchableOpacity>
         </View>
 
-        {/* Seção Linguagens */}
-        <View style={styles.subjectCard}>
-          <View style={styles.subjectHeader}>
-            <Text style={styles.subjectTitle}>Linguagens</Text>
-            <Text style={styles.subjectDescription}>
-              Língua Portuguesa e Estrangeira, Artes e Educação Física.
-            </Text>
+        {/* CARD 1 */}
+        <View style={[styles.card, { backgroundColor: "#E7F6FB" }]}>
+          <View style={styles.cardTop}>
+            <View>
+              <Text style={styles.cardTitle}>Linguagens</Text>
+
+              <Text style={styles.cardDescription}>
+                Língua Portuguesa e Estrangeira, Artes e Educação Física.
+              </Text>
+            </View>
+
+            <Text style={styles.icon}>📝</Text>
           </View>
-          <View style={styles.subjectFooter}>
-            <Text style={styles.subjectScore}>612</Text>
-            <Text style={styles.subjectScoreLabel}>Sua nota</Text>
+
+          <View style={styles.cardFooter}>
+            <View>
+              <Text style={styles.score}>612</Text>
+              <Text style={styles.small}>Sua nota</Text>
+            </View>
+
             <TouchableOpacity style={styles.trainButton}>
               <Text style={styles.trainButtonText}>Treinar</Text>
             </TouchableOpacity>
           </View>
         </View>
 
-        {/* Seção Ciências Humanas */}
-        <View style={styles.subjectCard}>
-          <View style={styles.subjectHeader}>
-            <Text style={styles.subjectTitle}>Ciências Humanas</Text>
-            <Text style={styles.subjectDescription}>
-              Filosofia, Geografia, História e Sociologia.
-            </Text>
+        {/* CARD 2 */}
+        <View style={[styles.card, { backgroundColor: "#F7E8EC" }]}>
+          <View style={styles.cardTop}>
+            <View>
+              <Text style={styles.cardTitle}>Ciências Humanas</Text>
+
+              <Text style={styles.cardDescription}>
+                Filosofia, Geografia, História e Sociologia.
+              </Text>
+            </View>
+
+            <Text style={styles.icon}>🏛️</Text>
           </View>
-          <View style={styles.subjectFooter}>
-            <Text style={styles.subjectScore}>552</Text>
-            <Text style={styles.subjectScoreLabel}>Sua nota</Text>
+
+          <View style={styles.cardFooter}>
+            <View>
+              <Text style={styles.score}>552</Text>
+              <Text style={styles.small}>Sua nota</Text>
+            </View>
+
             <TouchableOpacity style={styles.trainButton}>
               <Text style={styles.trainButtonText}>Treinar</Text>
             </TouchableOpacity>
           </View>
-        </View>
-
-        {/* Bottom Navigation */}
-        <View style={styles.bottomNav}>
-          <TouchableOpacity style={styles.navItem}>
-            <Text style={[styles.navText, styles.navTextActive]}>Treinar</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.navItem}>
-            <Text style={styles.navText}>Aprender</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.navItem}>
-            <Text style={styles.navText}>Ranking</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.navItem}>
-            <Text style={styles.navText}>Grupos</Text>
-          </TouchableOpacity>
         </View>
       </ScrollView>
-    </SafeAreaView>
+
+      {/* MENU INFERIOR */}
+      <View style={styles.bottomBar}>
+        <Text style={styles.activeBottom}>🖍️{"\n"}Treinar</Text>
+        <Text>📖{"\n"}Aprender</Text>
+        <Text>🏆{"\n"}Ranking</Text>
+        <Text>👨‍👩‍👧{"\n"}Grupos</Text>
+      </View>
+    </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: "#F5F5F5",
   },
-  navbar: {
-    width:500,
-    height:90,
-    backgroundColor:'#e21313',
-    paddingHorizontal: 20,
-    paddingTop: 10,
-    paddingBottom: 20,
-  },
-  logo: {
-    width: 40,
-    height: 40,
-    backgroundColor: '#7c16e2',
-  },
-  mainTrainingCard: {
-    backgroundColor: '#FFFFFF',
-    marginHorizontal: 20,
-    padding: 20,
-    borderRadius: 12,
-    marginBottom: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
-  },
-  mainTrainingTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#000000',
-    marginBottom: 8,
-  },
-  mainTrainingSubtitle: {
-    fontSize: 14,
-    color: '#666666',
-    lineHeight: 20,
-  },
-  menuContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginHorizontal: 20,
-    marginBottom: 24,
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    padding: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
-  },
-  menuItem: {
-    flex: 1,
-    alignItems: 'center',
-    paddingVertical: 10,
-  },
-  menuText: {
-    fontSize: 14,
-    fontWeight: '500',
-    color: '#333333',
-  },
-  subjectCard: {
-    backgroundColor: '#FFFFFF',
-    marginHorizontal: 20,
-    marginBottom: 16,
-    padding: 16,
-    borderRadius: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
-    borderWidth: 2,
-    borderColor: '#000000',
 
+  header: {
+    backgroundColor: "#FFF",
+    paddingHorizontal: 20,
+    paddingTop: 60,
+    paddingBottom: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
-  subjectHeader: {
-    marginBottom: 16,
-    backgroundColor:'#E8FBFF',
+
+  logo: {
+    fontSize: 35,
   },
-  subjectTitle: {
+
+  headerInfo: {
+    flexDirection: "row",
+    gap: 20,
+  },
+
+  headerText: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+
+  section: {
+    padding: 20,
+  },
+
+  title: {
+    fontSize: 36,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+
+  subtitle: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#000000',
-    marginBottom: 6,
+    color: "#555",
+    lineHeight: 28,
   },
-  subjectDescription: {
-    fontSize: 13,
-    color: '#888888',
-    lineHeight: 18,
+
+  line: {
+    height: 2,
+    backgroundColor: "#444",
+    marginTop: 25,
   },
-  subjectFooter: {
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    justifyContent: 'space-between',
-    borderTopWidth: 1,
-    borderTopColor: '#EEEEEE',
-    paddingTop: 12,
+
+  tabs: {
+    flexDirection: "row",
+    paddingHorizontal: 20,
+    marginBottom: 20,
+    gap: 10,
   },
-  subjectScore: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#000000',
+
+  activeTab: {
+    backgroundColor: "#2DA8FF",
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderRadius: 15,
   },
-  subjectScoreLabel: {
-    fontSize: 12,
-    color: '#999999',
-    marginLeft: 4,
+
+  activeTabText: {
+    color: "#FFF",
+    fontWeight: "bold",
+    fontSize: 18,
   },
+
+  tab: {
+    backgroundColor: "#FFF",
+    borderWidth: 1,
+    borderColor: "#CCC",
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderRadius: 15,
+  },
+
+  tabText: {
+    fontSize: 18,
+    fontWeight: "600",
+  },
+
+  card: {
+    marginHorizontal: 20,
+    marginBottom: 25,
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: "#444",
+    overflow: "hidden",
+  },
+
+  cardTop: {
+    padding: 25,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+
+  cardTitle: {
+    fontSize: 34,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+
+  cardDescription: {
+    fontSize: 18,
+    width: 230,
+    lineHeight: 30,
+    color: "#444",
+  },
+
+  icon: {
+    fontSize: 45,
+  },
+
+  cardFooter: {
+    backgroundColor: "#FFF",
+    borderTopWidth: 2,
+    borderColor: "#444",
+    padding: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
+  score: {
+    fontSize: 40,
+    fontWeight: "bold",
+  },
+
+  small: {
+    fontSize: 18,
+    color: "#666",
+  },
+
   trainButton: {
-    backgroundColor: '#007AFF',
-    paddingHorizontal: 20,
-    paddingVertical: 8,
-    borderRadius: 20,
+    backgroundColor: "#2DA8FF",
+    paddingHorizontal: 35,
+    paddingVertical: 15,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: "#444",
   },
+
   trainButtonText: {
-    color: '#FFFFFF',
-    fontSize: 14,
-    fontWeight: '600',
+    color: "#FFF",
+    fontSize: 20,
+    fontWeight: "bold",
   },
-  bottomNav: {
-    flexDirection: 'row',
-    backgroundColor: '#FFFFFF',
-    marginTop: 20,
-    paddingVertical: 12,
-    paddingHorizontal: 20,
+
+  bottomBar: {
+    height: 80,
+    backgroundColor: "#FFF",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
     borderTopWidth: 1,
-    borderTopColor: '#EEEEEE',
+    borderColor: "#DDD",
   },
-  navItem: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  navText: {
-    fontSize: 14,
-    color: '#999999',
-    fontWeight: '500',
-  },
-  navTextActive: {
-    color: '#007AFF',
+
+  activeBottom: {
+    color: "#2DA8FF",
+    fontWeight: "bold",
   },
 });
-
-export default App;
