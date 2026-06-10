@@ -7,21 +7,17 @@ import {
   StyleSheet,
 } from "react-native";
 
-import styles from "./TreinarStyles";
 
-export default function Treinar() {
+import styles from "./TreinarStyles";
+import Header from "../../../components/Header/Header";
+import Footer from "../../../components/Footer/Footer";
+
+export default function Treinar({ navigation }) {
   return (
     <View style={styles.container}>
       {/* HEADER */}
-      <View style={styles.header}>
-        <Text style={styles.logo}>💬</Text>
 
-        <View style={styles.headerInfo}>
-          <Text style={styles.headerText}>🔥 0</Text>
-          <Text style={styles.headerText}>⭐ 174</Text>
-          <Text style={styles.headerText}>👤</Text>
-        </View>
-      </View>
+      <Header />
 
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* TÍTULO */}
@@ -105,12 +101,10 @@ export default function Treinar() {
       </ScrollView>
 
       {/* MENU INFERIOR */}
-      <View style={styles.bottomBar}>
-        <Text style={styles.activeBottom}>🖍️{"\n"}Treinar</Text>
-        <Text>📖{"\n"}Aprender</Text>
-        <Text>🏆{"\n"}Ranking</Text>
-        <Text>👨‍👩‍👧{"\n"}Grupos</Text>
-      </View>
+      <Footer
+        navigation={navigation}
+        active="Treinar"
+      />
     </View>
   );
 }

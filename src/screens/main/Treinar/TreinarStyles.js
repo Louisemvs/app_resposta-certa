@@ -7,30 +7,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5F5F5",
   },
 
-  header: {
-    backgroundColor: "#FFF",
-    paddingHorizontal: 20,
-    paddingTop: 60,
-    paddingBottom: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-
-  logo: {
-    fontSize: 35,
-  },
-
-  headerInfo: {
-    flexDirection: "row",
-    gap: 20,
-  },
-
-  headerText: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-
   section: {
     padding: 20,
   },
