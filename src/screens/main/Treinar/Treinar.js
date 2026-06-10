@@ -6,7 +6,8 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import { styles } from "./TreinarStyles";
+
+import styles from "./TreinarStyles";
 
 export default function Treinar() {
   return (

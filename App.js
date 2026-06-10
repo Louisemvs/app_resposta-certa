@@ -2,9 +2,9 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Login from "./src/screens/auth/login";
-import Cadastro from "./src/screens/auth/cadastro";
-import Treinar from "./src/screens/main/Treinar";
+import Login from "./src/screens/auth/login/login";
+import Cadastro from "./src/screens/auth/cadastro/cadastro";
+import Treinar from "./src/screens/main/Treinar/Treinar";
 
 const Stack = createNativeStackNavigator();
 

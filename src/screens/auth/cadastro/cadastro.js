@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 
-import { styles } from "./cadastroStyles";
+import styles from "./cadastroStyles";
 
 export default function Cadastro({ navigation }) {
   const [nome, setNome] = useState("");
@@ -65,4 +65,3 @@ export default function Cadastro({ navigation }) {
     </View>
   );
 }
-
