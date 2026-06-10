@@ -7,7 +7,7 @@ import Cadastro from "./src/screens/auth/cadastro/cadastro";
 import Treinar from "./src/screens/main/Treinar/Treinar";
 import Aprender from "./src/screens/main/aprender/aprender";
 import Ranking from "./src/screens/main/ranking/ranking";
-//import Grupos from "./src/screens/main/grupos/grupos";
+import Grupos from "./src/screens/main/grupos/grupos";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,12 +42,12 @@ export default function App() {
           name="Ranking"
           component={Ranking}
         />
-{/*
+
         <Stack.Screen
           name="Grupos"
           component={Grupos}
         />
-        */}
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
