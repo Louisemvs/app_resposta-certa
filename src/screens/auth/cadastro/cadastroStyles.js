@@ -17,9 +17,14 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    fontSize: 60,
+    alignItems:"center",
+    justifyContent: "center",
+    height: 50,
+    width: 50,
+    resizeMode: "contain",
     textAlign: "center",
     marginBottom: 15,
+    marginLeft:118,
   },
 
   titulo: {

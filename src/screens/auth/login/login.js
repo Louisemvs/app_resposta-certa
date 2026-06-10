@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Image
 } from "react-native";
 
 import styles from "./loginStyles";
@@ -16,7 +17,10 @@ export default function Login({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
-        <Text style={styles.logo}>💬</Text>
+        <Image
+          source={require("../../../../assets/logo.png")}
+          style={styles.logo}
+        />
 
         <Text style={styles.titulo}>Entrar</Text>
 
